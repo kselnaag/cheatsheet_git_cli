@@ -79,13 +79,14 @@ git push $REPO :<dst>				- delete on server when copy "none" branch
 ```
 ## CONFIGS
 ```
-git config --global user.name $NAME                                     - set username(--system|--global|--local)
-git config user.name                                                    - get username
-git config --global user.email $EMAIL                                   - set email
-git config --global core.editor $EDITOR                                 - set editor
-git config --global credential.helper libsecret                         - save login|pass in encrypted file
-    || git config --global credential.helper store			- opened file
-    || git config --global credential.helper "cache --timeout=86400")	- temp memory in secs, 24 hours
+git config --global user.name $NAME                     - set username(--system|--global|--local)
+git config user.name                                    - get username
+git config --global user.email $EMAIL                   - set email
+git config --global core.editor $EDITOR                 - set editor
+git config --global credential.helper libsecret         - save login|pass in encrypted file
+    || git config --global credential.helper store	- opened file
+    || git config --global credential.helper "cache --timeout=86400")	
+    							- temp memory in secs, 24 hours
 ```
 ## BASH
 With `nano ~/.bashrc` do:
