@@ -1,7 +1,5 @@
 # **My git CLI sheatsheet for everyday usage.**
 
-[GitHub page](https://kselnaag.github.io/git_CLI_cheatsheet/ "GitHub page")
-
 ## BASICS
 ```
 git clone $REPO					- copy existing repo
