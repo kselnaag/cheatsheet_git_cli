@@ -1,5 +1,7 @@
 # **My git CLI sheatsheet for everyday usage.**
 
+[GitHub page](https://kselnaag.github.io/git_CLI_cheatsheet/ "GitHub page")
+
 ## BASICS
 ```
 git clone $REPO					- copy existing repo
@@ -14,12 +16,20 @@ git diff					- show changes after adding in stage
 git tag 					- show local tags
 git tag -a $LABEL -m $DESCRIPTION	        - set the TAG
 git show HEAD					- show diff in commit
+git clean -i					- clean interactive untracked from folder
+git clean -X					- clean ignored only
+git filter-branch --tree-filter 'rm -f passwords.txt' HEAD
+						- delete the file from all commits
+git reflog					- show all links to past HEADs
+git bisect start|bad|good			- pick good and bad commits and use
+							binary search to find the bag-gen commit
 ```
 ## JUMPS
 ```
 git checkout .					- rebuild local folder with last commit
 git checkout $FOLDER				- in subfolder
 git checkout -b $BRANCH $REPO			- create branch and switch here
+git checkout HEAD@{2}				- go to HEAD cli history
 
 git reset HEAD~3				- go to 3 commit backwards
 git reset HEAD^2			        - go to 2-nd parent
@@ -40,6 +50,17 @@ git branch -m $NEW_BRANCH			- rename
 git branch -r					- show remote branches
 git branch --all				- show local and tracking branches
 git branch -u $REM_BRANCH $BRANCH		- link to remote branch
+```
+## STASHES
+```
+git stash list					- list of stashes
+git stash save $MESS				- hide into stash
+git stash save -u				- hide with untracked files
+git stash apply stash@{1}			- get from stash
+git stash pop stash@{1}				- get and delete from list
+git stash show -p				- show the diff
+git stash clear					- delete all
+git stash drop stash@{1}			- delete choosen one
 ```
 ## MERGES
 ```
@@ -76,6 +97,20 @@ git push -u $REPO $BRANCH               	- set to remote repo (repo link + branc
 git push --tags                                 - set tags to remote repo
 git push $REPO --delete $BRANCH                 - delete branch in repo
 git push $REPO :<dst>				- delete on server when copy "none" branch
+```
+## PULL_REQUESTS
+May be usefull for pull requests - push to origin, pull from upstream:
+```
+IN .git/config do
+    [remote "origin"]
+    url = https://github.com/libgit2/libgit2.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+    fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+
+git remote add progit https://github.com/progit/progit2.git
+git fetch progit
+git branch --set-upstream-to=progit/master master
+git config --local remote.pushDefault origin
 ```
 ## CONFIGS
 ```
