@@ -1,6 +1,6 @@
 # **My git CLI sheatsheet for everyday usage.**
 
-[GitHub page](https://kselnaag.github.io/git_CLI_cheatsheet/ "GitHub page")
+[GitHub page](https://kselnaag.github.io/cheatsheet_git_CLI "GitHub page")
 
 ## BASICS
 ```
