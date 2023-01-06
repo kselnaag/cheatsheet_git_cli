@@ -97,6 +97,7 @@ git push -u $REPO $BRANCH               	- set to remote repo (repo link + branc
 git push --tags                                 - set tags to remote repo
 git push $REPO --delete $BRANCH                 - delete branch in repo
 git push $REPO :<dst>				- delete on server when copy "none" branch
+git push --force				- apply local changes with commit loose on repo side
 ```
 ## PULL_REQUESTS
 May be usefull for pull requests - push to origin, pull from upstream:
